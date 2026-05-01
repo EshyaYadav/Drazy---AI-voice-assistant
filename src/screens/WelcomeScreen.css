@@ -1,0 +1,205 @@
+.welcome-screen {
+  width: 100%;
+  height: 100vh;
+  min-height: 100%;
+  background: linear-gradient(135deg, #0f0c29 0%, #24243e 30%, #302b63 70%, #0f0c29 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Particles */
+.particles-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px 1px rgba(156, 39, 176, 0.5);
+  transition: transform 0.016s linear;
+}
+
+/* Main content */
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  z-index: 1;
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.animate-in {
+  animation: fadeSlideIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Microphone */
+.mic-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.mic-outer-ring {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid rgba(156, 39, 176, 0.3);
+}
+
+.rotating {
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.mic-pulse-ring {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(156, 39, 176, 0.1) 0%,
+    rgba(103, 58, 183, 0.05) 60%,
+    transparent 100%
+  );
+}
+
+.pulsing {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.mic-circle {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.8), rgba(103, 58, 183, 0.9), rgba(63, 81, 181, 0.8));
+  box-shadow:
+    0 10px 30px rgba(156, 39, 176, 0.4),
+    0 15px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mic-highlight {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent 60%);
+}
+
+.mic-icon {
+  font-family: 'Material Icons', sans-serif;
+  font-size: 70px;
+  color: white;
+  z-index: 1;
+}
+
+/* Title */
+.title-section {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title-main {
+  margin: 0 0 8px;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #9c27b0, #673ab7, #3f51b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.title-sub {
+  margin: 0 0 24px;
+  font-size: 24px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 8px;
+}
+
+.title-desc {
+  margin: 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  font-weight: 300;
+  padding: 0 20px;
+}
+
+/* Button */
+.get-started-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 40px;
+  width: 100%;
+  max-width: 300px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #9c27b0, #673ab7, #3f51b5);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(156, 39, 176, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.get-started-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(156, 39, 176, 0.5);
+}
+
+.get-started-btn:active {
+  transform: translateY(0);
+}
+
+.btn-arrow {
+  font-family: 'Material Icons', sans-serif;
+  font-size: 16px;
+}

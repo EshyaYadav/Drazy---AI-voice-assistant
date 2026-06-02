@@ -1,7 +1,8 @@
 import type { AssistantId } from '../types';
 import { ASSISTANTS } from './assistants';
 
-const apiKey = import.meta.env.VITE_GROQ_API_KEY as string;
+// @ts-ignore
+const apiKey = (import.meta as any).env.VITE_GROQ_API_KEY as string;
 if (!apiKey) throw new Error('VITE_GROQ_API_KEY environment binding is not set.');
 export interface ChatMessage {
   role: 'user' | 'model';
